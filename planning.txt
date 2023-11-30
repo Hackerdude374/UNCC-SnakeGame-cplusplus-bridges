@@ -1,0 +1,47 @@
+initialize() function
+-initialize all of the variables
+-rows and columns, snake's original location, first apple, first direction....
+
+gameLoop() function
+*draw out every frame
+-take in the input, use the recorded input to update the snake and apple and everything else, draw out the new frame
+
+start()
+{
+  initalize();
+  while (hasn't quit)
+  {
+    gameLoop();
+  }
+}
+
+-----------------------------------
+All of the variables for struct game
+
+variables
+-------------
+int rows;
+int columns;
+Queue Snake;
+Direction (it can be an int or string or anything else to just record the direction. Lets have a string )
+Block apple;
+
+functions for game struct
+
+initialize() - initializes the variables of game struct
+
+handleInput() - get the input from bridges using the functions keyW(), keyA(), keyS(), and keyD() and then record the appropriate direction. Have to record the direction in the direction variable
+
+The direction variable will be used in updatePosition as the recorded position.
+updatePosition() - using the recorded direction, change the snake accordingly. Have to account for the snake eating apple and hitting itself.
+
+plantApple() - move the apple to a position the snake is not at
+
+void detectApple() - snake's head is touching the apple. plant the apple to another location, increase the size of the snake.
+
+void detectDeath() - snake's head is equal to one of its nodes and therefore we will stop the game loop.
+
+D
+
+void gameLoop() - receive the input(handleInput), update position, then draw new frame.
+
